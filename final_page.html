@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ваш тип личности</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f1f0f6;
+      color: #333;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header {
+      background-color: #dcd3e8;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    .result {
+      font-size: 2em;
+      color: #c9a8e3;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .description {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .note {
+      font-size: 0.95em;
+      color: #666;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Поздравляем!</h1>
+  </header>
+
+  <div class="result" id="user-type"></div>
+
+  <div class="description">
+    Это лишь отправная точка. Тип личности — это не ограничение, а инструмент познания себя.  
+    Используйте это знание, чтобы глубже понять свои сильные стороны, желания и стиль взаимодействия с миром.
+  </div>
+
+  <div class="note">
+    Результат не является диагнозом. Это отражение вашей внутренней гармонии.
+  </div>
+
+  <script>
+    const l1 = localStorage.getItem("letter1") || "";
+    const l2 = localStorage.getItem("letter2") || "";
+    const l3 = localStorage.getItem("letter3") || "";
+    const l4 = localStorage.getItem("letter4") || "";
+    const mod = localStorage.getItem("modifier") || "";
+    const module = localStorage.getItem("module") || "";
+
+    const result = `${l1}${l2}${l3}${l4}${module ? "-" + module : ""}${mod ? "-" + mod : ""}`;
+    document.getElementById("user-type").textContent = "Ваш тип: " + result;
+  </script>
+</body>
+</html>
